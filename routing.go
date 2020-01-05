@@ -16,7 +16,7 @@ import (
 	"github.com/ipfs/go-cid"
 	u "github.com/ipfs/go-ipfs-util"
 	logging "github.com/ipfs/go-log"
-	pb "github.com/libp2p/go-libp2p-kad-dht/pb"
+	pb "github.com/ProteinsLive/go-libp2p-kad-dht/pb"
 	kb "github.com/libp2p/go-libp2p-kbucket"
 	record "github.com/libp2p/go-libp2p-record"
 )
@@ -625,6 +625,19 @@ func (dht *IpfsDHT) findProvidersAsyncRoutine(ctx context.Context, key cid.Cid, 
 
 	// refresh the k-bucket containing this key after the query is run
 	dht.routingTable.BucketForID(kb.ConvertKey(key.KeyString())).ResetRefreshedAt(time.Now())
+}
+
+// findPeerSingle asks peer 'p' if they know where the peer with id 'id' is
+func (dht *IpfsDHT) FindPeerSingle(p peer.ID, id peer.ID) ([]*peer.AddrInfo, error) {
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	//dht.FindPeer(ctx, id)
+	msg, err := dht.findPeerSingle(ctx, p, id)
+	if err != nil {
+		return nil, err
+	}
+	closer := msg.GetCloserPeers()
+	return pb.PBPeersToPeerInfos(closer), nil
 }
 
 // FindPeer searches for a peer with given ID.

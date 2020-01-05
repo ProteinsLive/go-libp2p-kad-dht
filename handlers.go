@@ -16,7 +16,7 @@ import (
 	"github.com/ipfs/go-cid"
 	ds "github.com/ipfs/go-datastore"
 	u "github.com/ipfs/go-ipfs-util"
-	pb "github.com/libp2p/go-libp2p-kad-dht/pb"
+	pb "github.com/ProteinsLive/go-libp2p-kad-dht/pb"
 	recpb "github.com/libp2p/go-libp2p-record/pb"
 	"github.com/multiformats/go-base32"
 )

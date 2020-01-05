@@ -18,10 +18,10 @@ import (
 	"go.opencensus.io/tag"
 	"golang.org/x/xerrors"
 
-	"github.com/libp2p/go-libp2p-kad-dht/metrics"
-	opts "github.com/libp2p/go-libp2p-kad-dht/opts"
-	pb "github.com/libp2p/go-libp2p-kad-dht/pb"
-	"github.com/libp2p/go-libp2p-kad-dht/providers"
+	"github.com/ProteinsLive/go-libp2p-kad-dht/metrics"
+	opts "github.com/ProteinsLive/go-libp2p-kad-dht/opts"
+	pb "github.com/ProteinsLive/go-libp2p-kad-dht/pb"
+	"github.com/ProteinsLive/go-libp2p-kad-dht/providers"
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/ipfs/go-cid"
@@ -186,9 +186,9 @@ func makeDHT(ctx context.Context, h host.Host, dstore ds.Batching, protocols []p
 	return dht
 }
 
-// TODO Implement RT seeding as described in https://github.com/libp2p/go-libp2p-kad-dht/pull/384#discussion_r320994340 OR
+// TODO Implement RT seeding as described in https://github.com/ProteinsLive/go-libp2p-kad-dht/pull/384#discussion_r320994340 OR
 // come up with an alternative solution.
-// issue is being tracked at https://github.com/libp2p/go-libp2p-kad-dht/issues/387
+// issue is being tracked at https://github.com/ProteinsLive/go-libp2p-kad-dht/issues/387
 /*func (dht *IpfsDHT) rtRecovery(proc goprocess.Process) {
 	writeResp := func(errorChan chan error, err error) {
 		select {

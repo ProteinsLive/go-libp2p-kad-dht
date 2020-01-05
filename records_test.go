@@ -15,7 +15,7 @@ import (
 	record "github.com/libp2p/go-libp2p-record"
 	tnet "github.com/libp2p/go-libp2p-testing/net"
 
-	dhtopt "github.com/libp2p/go-libp2p-kad-dht/opts"
+	dhtopt "github.com/ProteinsLive/go-libp2p-kad-dht/opts"
 )
 
 // Check that GetPublicKey() correctly extracts a public key

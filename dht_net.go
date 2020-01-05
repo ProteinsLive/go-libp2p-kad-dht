@@ -12,8 +12,8 @@ import (
 	"github.com/libp2p/go-libp2p-core/network"
 	"github.com/libp2p/go-libp2p-core/peer"
 
-	"github.com/libp2p/go-libp2p-kad-dht/metrics"
-	pb "github.com/libp2p/go-libp2p-kad-dht/pb"
+	"github.com/ProteinsLive/go-libp2p-kad-dht/metrics"
+	pb "github.com/ProteinsLive/go-libp2p-kad-dht/pb"
 
 	ggio "github.com/gogo/protobuf/io"
 

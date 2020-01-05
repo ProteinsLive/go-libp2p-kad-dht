@@ -9,11 +9,11 @@ import (
 	"github.com/libp2p/go-libp2p-core/network"
 	"github.com/libp2p/go-libp2p-core/peer"
 	"github.com/libp2p/go-libp2p-core/routing"
-	opts "github.com/libp2p/go-libp2p-kad-dht/opts"
+	opts "github.com/ProteinsLive/go-libp2p-kad-dht/opts"
 
 	ggio "github.com/gogo/protobuf/io"
 	u "github.com/ipfs/go-ipfs-util"
-	pb "github.com/libp2p/go-libp2p-kad-dht/pb"
+	pb "github.com/ProteinsLive/go-libp2p-kad-dht/pb"
 	record "github.com/libp2p/go-libp2p-record"
 	mocknet "github.com/libp2p/go-libp2p/p2p/net/mock"
 )
