@@ -628,11 +628,11 @@ func (dht *IpfsDHT) findProvidersAsyncRoutine(ctx context.Context, key cid.Cid, 
 }
 
 // findPeerSingle asks peer 'p' if they know where the peer with id 'id' is
-func (dht *IpfsDHT) FindPeerSingle(p peer.ID, id peer.ID) ([]*peer.AddrInfo, error) {
-	ctx, cancel := context.WithCancel(context.Background())
+func (dht *IpfsDHT) FindPeerSingle(ctx context.Context, p peer.ID, id peer.ID) ([]*peer.AddrInfo, error) {
+	cancelCtx, cancel := context.WithCancel(ctx)
 	defer cancel()
 	//dht.FindPeer(ctx, id)
-	msg, err := dht.findPeerSingle(ctx, p, id)
+	msg, err := dht.findPeerSingle(cancelCtx, p, id)
 	if err != nil {
 		return nil, err
 	}
